@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Zack Flight, your luxury airline experience for first-class travel.">  
+    <title>Home - Zack Flight</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles with a luxury airline theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        .hero-section {
+            background-image: url('images/flight-hero.jpg'); /* Replace with a flight or sky image */
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .search-section {
+            text-align: center;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .search-section input, .search-section select {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-section button {
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-section button:hover {
+            background-color: #2980b9;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .card {
+            background: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.7rem;
+            color: #2c3e50;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar with Updated Links -->
+    <header>
+        <img src="LOGOO.png" alt="Zack Flight Logo" width="90" height="auto" style="vertical-align: middle; margin-right: 5px;">
+        <h1 style="display: inline-block; vertical-align: middle;"></h1>
+        <nav>
+            <ul>
+                <li><a href="FA home.html">Home</a></li>
+                <li><a href="FA search flight.html">Search Flights</a></li>
+                <li><a href="FA Contact Us.html">Contact Us</a></li>
+                <li><a href="FA About Us.html">About Us</a></li>
+                <li><a href="login.php">Admin Login</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero-section" style="background-image: url('FLIGHT.png');">
+        <div>
+            <h1>Welcome Aboard Zack Flight</h1>
+            <p>Your luxury first-class experience in the skies</p>
+            <a href="FA search flight.html" class="button">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Content Section with Images in Cards -->
+    <section class="search-section">
+        <div class="grid-container">
+            <div class="card">
+                <img src="Luxury Suites.png" alt="Luxury Suites" width="320" height="auto" style="margin-bottom: 1rem;">
+                <h3>Luxury Suites</h3>
+                <p>Our suites are designed to provide ultimate comfort.</p>
+            </div>
+            <div class="card">
+                <img src="fine dining.png" alt="Fine Dining" width="320" height="auto" style="margin-bottom: 1rem;">
+                <h3>Fine Dining</h3>
+                <p>Savor gourmet meals crafted by top chefs.</p>
+            </div>
+            <div class="card">
+                <img src="In-Flight Wellness.png" alt="In-Flight Wellness" width="320" height="auto" style="margin-bottom: 1rem;">
+                <h3>In-Flight Wellness</h3>
+                <p>Relax and recharge with our wellness treatments.</p>
+            </div>
+            <div class="card">
+                <img src="Exclusive Destinations.png" alt="Exclusive Destinations" width="320" height="auto" style="margin-bottom: 1rem;">
+                <h3>Exclusive Destinations</h3>
+                <p>Explore cultural and modern marvels at your destinations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Zack Flight. All rights reserved.</p>
+        <p><a href="FA privacy.html">Privacy Policy </a>| <a href="terms.html">&nbsp;</a></p>
+    </footer>
+</body>
+</html>

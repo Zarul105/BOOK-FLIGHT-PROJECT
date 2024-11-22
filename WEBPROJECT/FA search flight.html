@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search and find available flights on Zack Flight.">
+    <title>Search Flights - Zack Flight</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        .search-section {
+            text-align: center;
+            padding: 3rem;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            border-radius: 8px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-section h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-section input,
+        .search-section select {
+            padding: 0.8rem;
+            margin: 0.8rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-section button {
+            padding: 0.8rem 2rem;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-section button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Flight Results */
+        .results-section {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .result-card {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .result-card h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .result-card p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .result-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <a href="FA home.html"><img src="LOGOO.png" alt="Zack Flight Logo" width="90" height="auto" style="vertical-align: middle; margin-right: 5px;"></a>
+   
+        <nav>
+            <ul>
+                <li><a href="FA home.html">Home</a></li>
+                <li><a href="FA search flight.html">Search Flights</a></li>
+                <li><a href="FA contact us.html">Contact Us</a></li> <!-- Added Contact Us right after Manage Booking -->
+                <li><a href="FA about us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Flights Section -->
+	<main>
+    <section class="search-section">
+        <h2>Book Flights</h2>
+        <form action="submit_flight_booking.php" method="post">
+                <label for="customerName">Customer Name</label>
+                <input type="text" id="customerName" name="customerName" required>
+
+                <label for="departure">Departure Location</label>
+                <select id="departure" name="departure" required>
+					<option value=""></option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Jakarta">Jakarta</option>
+					<option value="New York">New York</option>
+					<option value="London">London</option>
+					<option value="Los Angeles">Los Angeles</option>
+					<option value="Tokyo">Tokyo</option>
+					<option value="Dubai">Dubai</option>
+                </select>
+
+                <label for="arrival">Arrival Location</label>
+                <select id="arrival" name="arrival" required>
+					<option value=""></option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="New York">New York</option>
+					<option value="London">London</option>
+					<option value="Los Angeles">Los Angeles</option>
+					<option value="Tokyo">Tokyo</option>
+					<option value="Dubai">Dubai</option>
+                </select>
+
+                <label for="departureDate">Departure Date</label>
+                <input type="date" id="departureDate" name="departureDate" required>
+
+                <label for="returnDate">Return Date (Optional)</label>
+                <input type="date" id="returnDate" name="returnDate">
+
+                <label for="numPassengers">Number of Passengers</label>
+                <input type="text" id="numPassengers" name="numPassengers" required>
+
+                <label for="seatClass">Seat Class</label>
+                <select id="seatClass" name="seatClass" required>
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first">First Class</option>
+                </select>
+
+                <label for="totalPayment">Total Payment (RM)</label>
+                <input type="text" id="totalPayment" name="totalPayment" readonly>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+    </main>
+	
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Zack Flight. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">&nbsp;</a></p>
+    </footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Calculate the total payment based on passenger count and seat class
+        document.getElementById('numPassengers').addEventListener('input', calculatePayment);
+        document.getElementById('seatClass').addEventListener('change', calculatePayment);
+
+        function calculatePayment() {
+            const numPassengers = parseInt(document.getElementById('numPassengers').value || 0);
+            const seatClass = document.getElementById('seatClass').value;
+
+            let pricePerPassenger = 0;
+            if (seatClass === 'economy') {
+                pricePerPassenger = 150;
+            } else if (seatClass === 'business') {
+                pricePerPassenger = 500;
+            } else if (seatClass === 'first') {
+                pricePerPassenger = 1000;
+            }
+
+            const totalPayment = numPassengers > 0 ? numPassengers * pricePerPassenger : 0;
+            document.getElementById('totalPayment').value = totalPayment.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
